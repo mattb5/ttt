@@ -1,3 +1,5 @@
+//single change
+
 'use strict';
 
 // function to check if there is a winner after every click
@@ -8,8 +10,8 @@ const ifWinner = function ()
 
 		//horizontal winners
 		//
-		
-		if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox")) 
+
+		if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
 		{
 			alert("X is the winner!");
 		}
@@ -29,10 +31,10 @@ const ifWinner = function ()
 			alert("Winner!");
 		}
 
-		
+
 
 		//vertical winners
-		// 
+		//
 
 		else if (($("#divOne").hasClass("xBox") && $("#divFour").hasClass("xBox") && $("#divSeven").hasClass("xBox")))
 		{
@@ -42,7 +44,7 @@ const ifWinner = function ()
 		{
 			alert("Winner!");
 		}
-		
+
 
 
 		//diagonal winners
@@ -61,12 +63,12 @@ const ifWinner = function ()
 
 
 
-// the click event handlers in the box 
+// the click event handlers in the box
 $( document ).ready(function() {
     var counter = 0;
-    
+
     $("#divOne").click(function(){
-        if (counter % 2 == 0) 
+        if (counter % 2 == 0)
         {
             $(this).addClass('xBox');
             counter++;
@@ -82,7 +84,7 @@ $( document ).ready(function() {
 
 
 	$("#divTwo").click(function(){
-	    if (counter % 2 == 0) 
+	    if (counter % 2 == 0)
 	    {
 	        $(this).addClass('xBox');
 	        counter++;
@@ -116,7 +118,7 @@ $( document ).ready(function() {
         }
         ifWinner();
     	});
-  	
+
      $("#divFive").click(function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
@@ -176,17 +178,17 @@ $( document ).ready(function() {
         }
         ifWinner();
     	});
-});	
+});
 
 
 
 
 	// $( document ).ready(function() {
-	
+
 	// var counter = 1;
-	
+
 	// if (counter % 2 == 0)
-		
+
 	// {
 	// 	$("#divOne").click(function(){
 	//     	$(this).addClass("xBox");
@@ -201,28 +203,24 @@ $( document ).ready(function() {
 	//     	console.log(counter + " this is the counter ");
 	//     	});
 	// }
-	
-	
+
+
 	// else
-	
-	
-	// {		
+
+
+	// {
 	// 	$("#divOne").click(function(){
 	//     	$(this).addClass("oBox");
 	//     	counter++;
 	//     	console.log(counter + " this is the counter ");
 	//     	});
-	
-			
+
+
 	// 	$("#divTwo").click(function(){
 	//     	$(this).addClass("oBox");
 	//     	counter++;
 	//     	console.log(counter + " this is the counter ");
 	//     	});
-	// }		
-	
-	// });	
+	// }
 
-
-	
-
+	// });
