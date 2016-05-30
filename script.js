@@ -1,10 +1,8 @@
-//single change
 
 'use strict';
 
 // function to check if there is a winner after every click
 // call this function after the end of every click
-
 const ifWinner = function ()
 	{
 
@@ -67,8 +65,8 @@ const ifWinner = function ()
 $( document ).ready(function() {
     var counter = 0;
 
-    $("#divOne").click(function(){
-        if (counter % 2 == 0)
+    $("#divOne").one("click", function(){
+		  	if (counter % 2 == 0)
         {
             $(this).addClass('xBox');
             counter++;
@@ -79,11 +77,12 @@ $( document ).ready(function() {
             counter++;
         }
         ifWinner();
+				console.log("this is the first click");
     	});
 
 
 
-	$("#divTwo").click(function(){
+	$("#divTwo").one("click", function(){
 	    if (counter % 2 == 0)
 	    {
 	        $(this).addClass('xBox');
@@ -93,9 +92,10 @@ $( document ).ready(function() {
 	        counter++;
 	    }
 	    ifWinner();
+			console.log("this is the second click");
 	    });
 
-    $("#divThree").click(function(){
+    $("#divThree").one("click", function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
             counter++;
@@ -107,7 +107,7 @@ $( document ).ready(function() {
         ifWinner();
     	});
 
-    $("#divFour").click(function(){
+    $("#divFour").one("click", function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
             counter++;
@@ -119,7 +119,7 @@ $( document ).ready(function() {
         ifWinner();
     	});
 
-     $("#divFive").click(function(){
+     $("#divFive").one("click", function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
             counter++;
@@ -131,7 +131,7 @@ $( document ).ready(function() {
         ifWinner();
     	});
 
-     $("#divSix").click(function(){
+     $("#divSix").one("click", function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
             counter++;
@@ -143,7 +143,7 @@ $( document ).ready(function() {
         ifWinner();
     	});
 
-     $("#divSeven").click(function(){
+     $("#divSeven").one("click",function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
             counter++;
@@ -155,7 +155,7 @@ $( document ).ready(function() {
         ifWinner();
     	});
 
-     $("#divEight").click(function(){
+     $("#divEight").one("click", function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
             counter++;
@@ -167,7 +167,7 @@ $( document ).ready(function() {
         ifWinner();
     	});
 
-     $("#divNine").click(function(){
+     $("#divNine").one("click", function(){
         if (counter % 2 == 0) {
             $(this).addClass('xBox');
             counter++;
@@ -178,6 +178,11 @@ $( document ).ready(function() {
         }
         ifWinner();
     	});
+
+		$("#resetButton").on("click", function() {
+				$("#divOne").removeClass();
+		})
+
 });
 
 

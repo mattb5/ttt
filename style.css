@@ -1,3 +1,9 @@
+section {
+  /*position: static;*/
+  min-width: 650px;
+
+}
+
 div {
   width: 200px;
   height: 200px;
@@ -12,7 +18,7 @@ div {
 }
 
 #divSeven{
-	clear: both;	
+	clear: both;
 }
 
 .xBox {
