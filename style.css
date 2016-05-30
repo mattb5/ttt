@@ -20,3 +20,9 @@ div {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+.oBox{
+	background-image: url(o.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
