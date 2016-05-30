@@ -65,46 +65,70 @@ const ifWinner = function ()
 $( document ).ready(function() {
     var counter = 0;
 
-    $("#divOne").one("click", function(){
-		  	if (counter % 2 == 0)
-        {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else
-        {
-            $(this).addClass('oBox');
-            counter++;
-        }
+    $("#divOne").on("click", function(){
+				if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+				{
+			  	if (counter % 2 == 0)
+	        {
+	            $(this).addClass('xBox');
+	            counter++;
+
+	        }
+	        else
+	        {
+	            $(this).addClass('oBox');
+	            counter++;
+
+	        }
+				}
         ifWinner();
-				console.log("this is the first click");
     	});
 
 
 
-	$("#divTwo").one("click", function(){
-	    if (counter % 2 == 0)
-	    {
-	        $(this).addClass('xBox');
-	        counter++;
-	    } else {
-	        $(this).addClass('oBox');
-	        counter++;
-	    }
+	$("#divTwo").on("click", function(){
+			if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+			{
+				if (counter % 2 == 0)
+		    {
+		        $(this).addClass('xBox');
+		        counter++;
+		    }
+				else
+				{
+		        $(this).addClass('oBox');
+		        counter++;
+		    }
+			}
 	    ifWinner();
-			console.log("this is the second click");
 	    });
 
-    $("#divThree").one("click", function(){
-        if (counter % 2 == 0) {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else{
-            $(this).addClass('oBox');
-            counter++;
-        }
-        ifWinner();
+
+    $("#divThree").on("click", function(){
+			if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+			{
+				if (counter % 2 == 0)
+				{
+						$(this).addClass('xBox');
+						counter++;
+				}
+				else
+				{
+						$(this).addClass('oBox');
+						counter++;
+
+				}
+			}
+			ifWinner();
+				// if (counter % 2 == 0) {
+        //     $(this).addClass('xBox');
+        //     counter++;
+        // }
+        // else{
+        //     $(this).addClass('oBox');
+        //     counter++;
+        // }
+        // ifWinner();
     	});
 
     $("#divFour").one("click", function(){
@@ -179,8 +203,11 @@ $( document ).ready(function() {
         ifWinner();
     	});
 
-		$("#resetButton").on("click", function() {
-				$("#divOne").removeClass();
+		$("#resetButton").on("click", function( event ) {
+				event.preventDefault();
+				// $("#divOne").removeClass();
+				$("div").removeClass();
+
 		})
 
 });
