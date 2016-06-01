@@ -12,6 +12,8 @@ const ifWinner = function ()
 		if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
 		{
 			alert("X is the winner!");
+			counter = 0;
+			console.log(counter);
 		}
 
 		else if (($("#divOne").hasClass("oBox") && $("#divTwo").hasClass("oBox") && $("#divThree").hasClass("oBox")))
@@ -55,8 +57,9 @@ const ifWinner = function ()
 		else if (($("#divOne").hasClass("oBox") && $("#divFive").hasClass("oBox") && $("#divNine").hasClass("oBox")))
 		{
 			alert("Winner!");
+
 		}
-	}
+	};
 
 
 
@@ -120,95 +123,124 @@ $( document ).ready(function() {
 				}
 			}
 			ifWinner();
-				// if (counter % 2 == 0) {
-        //     $(this).addClass('xBox');
-        //     counter++;
-        // }
-        // else{
-        //     $(this).addClass('oBox');
-        //     counter++;
-        // }
-        // ifWinner();
     	});
 
-    $("#divFour").one("click", function(){
-        if (counter % 2 == 0) {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else{
-            $(this).addClass('oBox');
-            counter++;
-        }
-        ifWinner();
-    	});
+    $("#divFour").on("click", function(){
+			if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+			{
+				if (counter % 2 == 0)
+				{
+						$(this).addClass('xBox');
+						counter++;
+				}
+				else
+				{
+						$(this).addClass('oBox');
+						counter++;
 
-     $("#divFive").one("click", function(){
-        if (counter % 2 == 0) {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else{
-            $(this).addClass('oBox');
-            counter++;
-        }
-        ifWinner();
-    	});
+				}
+			}
+			ifWinner();
+			});
 
-     $("#divSix").one("click", function(){
-        if (counter % 2 == 0) {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else{
-            $(this).addClass('oBox');
-            counter++;
-        }
-        ifWinner();
-    	});
+     $("#divFive").on("click", function(){
+			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+			 {
+				 if (counter % 2 == 0)
+				 {
+						 $(this).addClass('xBox');
+						 counter++;
+				 }
+				 else
+				 {
+						 $(this).addClass('oBox');
+						 counter++;
 
-     $("#divSeven").one("click",function(){
-        if (counter % 2 == 0) {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else{
-            $(this).addClass('oBox');
-            counter++;
-        }
-        ifWinner();
-    	});
+				 }
+			 }
+			 ifWinner();
+			 });
 
-     $("#divEight").one("click", function(){
-        if (counter % 2 == 0) {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else{
-            $(this).addClass('oBox');
-            counter++;
-        }
-        ifWinner();
-    	});
+     $("#divSix").on("click", function(){
+			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+			 {
+				 if (counter % 2 == 0)
+				 {
+						 $(this).addClass('xBox');
+						 counter++;
+				 }
+				 else
+				 {
+						 $(this).addClass('oBox');
+						 counter++;
 
-     $("#divNine").one("click", function(){
-        if (counter % 2 == 0) {
-            $(this).addClass('xBox');
-            counter++;
-        }
-        else{
-            $(this).addClass('oBox');
-            counter++;
-        }
-        ifWinner();
-    	});
+				 }
+			 }
+			 ifWinner();
+			 });
+
+     $("#divSeven").on("click",function(){
+			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+			 {
+				 if (counter % 2 == 0)
+				 {
+						 $(this).addClass('xBox');
+						 counter++;
+				 }
+				 else
+				 {
+						 $(this).addClass('oBox');
+						 counter++;
+
+				 }
+			 }
+			 ifWinner();
+			 });
+
+     $("#divEight").on("click", function(){
+			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+ 			{
+ 				if (counter % 2 == 0)
+ 				{
+ 						$(this).addClass('xBox');
+ 						counter++;
+ 				}
+ 				else
+ 				{
+ 						$(this).addClass('oBox');
+ 						counter++;
+
+ 				}
+ 			}
+ 			ifWinner();
+		});
+
+     $("#divNine").on("click", function(){
+			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+			{
+				if (counter % 2 == 0)
+				{
+						$(this).addClass('xBox');
+						counter++;
+				}
+				else
+				{
+						$(this).addClass('oBox');
+						counter++;
+
+				}
+			}
+			ifWinner();
+		});
 
 		$("#resetButton").on("click", function( event ) {
 				event.preventDefault();
+				counter = 0;
 				// $("#divOne").removeClass();
 				$("div").removeClass();
 
-		})
+
+		});
 
 });
 
